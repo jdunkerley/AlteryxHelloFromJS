@@ -1,0 +1,14 @@
+{
+  "name": "hello-from-js",
+  "version": "1.0.0.0",
+  "description": "\"Demonstration of a TypeScript Custom Tool for Alteryx\"",
+  "main": "HelloFromJSGui.html",
+  "author": "James Dunkerley",
+  "license": "MIT",
+  "devDependencies": {
+    "tslint": "^5.4.3",
+    "tslint-config-standard": "^6.0.1",
+    "typescript": "^2.4.1"
+  },
+  "repository": "https://github.com/jdunkerley/AlteryxHelloFromJS.git"
+}
