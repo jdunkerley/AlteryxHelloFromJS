@@ -83,3 +83,4 @@ if (Test-Path $target) {
 Move-Item "$temp\$name.zip" $target
 Pop-Location
 Remove-Item $temp -Recurse -Force
+Write-Host "Created $target"
