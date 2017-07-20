@@ -73,7 +73,7 @@ foreach ($sourceFolder in $folders) {
     Get-ChildItem $sourceFolder -Exclude '*.ts', '*.map', 'node_modules', '*.bak', 'yarn.lock', 'package.json', 'ts*.json', '*Install.ps1' | Copy-Item -Destination "$temp\$leaf"
 }
 
-Compress-Archive -Path "$temp" -DestinationPath "$temp\$name.zip" -Verbose -Update
+Compress-Archive -Path "$temp\*" -DestinationPath "$temp\$name.zip" -Verbose -Update
 
 $target = "$parent\${name}_$version.yxi"
 if (Test-Path $target) {
