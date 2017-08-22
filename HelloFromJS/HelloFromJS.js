@@ -1,3 +1,4 @@
+"use strict";
 /// <reference path="../AlteryxEngine.d.ts" />
 var globalConfiguration = {
     state: '',
@@ -16,7 +17,7 @@ Alteryx.Plugin.PI_Init = function (config) {
     globalConfiguration.state = 'Inited';
     if (config.Configuration) {
         globalConfiguration.columnName = config.Configuration['ColumnName'] || globalConfiguration.columnName;
-        globalConfiguration.value = config.Configuration['Value'] || globalConfiguration.value;
+        globalConfiguration.value = config.Configuration['Function'] || config.Configuration['Value'] || globalConfiguration.value;
     }
 };
 Alteryx.Plugin.II_Init = function (metaInfo) {
@@ -43,3 +44,4 @@ Alteryx.Plugin.PI_Close = function () {
     }
     Alteryx.Engine.SendMessage.PI_Close();
 };
+//# sourceMappingURL=HelloFromJS.js.map

@@ -10,5 +10,9 @@
     "tslint-config-standard": "^6.0.1",
     "typescript": "^2.4.1"
   },
-  "repository": "https://github.com/jdunkerley/AlteryxHelloFromJS.git"
+  "repository": "https://github.com/jdunkerley/AlteryxHelloFromJS.git",
+  "scripts": {
+    "prebuild": "tslint -c tslint.json --project .",
+    "build": "tsc --sourceMap --listFiles --listEmittedFiles --strict --pretty -p tsconfig.json"
+  }
 }

@@ -13,5 +13,11 @@
         "skipLibCheck": true,
         "allowJs": true,
         "jsx": "react"
-    }
+    },
+    "include": [
+        "./**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }

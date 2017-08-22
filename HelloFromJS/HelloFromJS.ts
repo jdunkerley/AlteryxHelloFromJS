@@ -18,7 +18,7 @@ Alteryx.Plugin.PI_Init = (config) => {
   globalConfiguration.state = 'Inited'
   if (config.Configuration) {
     globalConfiguration.columnName = config.Configuration['ColumnName'] || globalConfiguration.columnName
-    globalConfiguration.value = config.Configuration['Value'] || globalConfiguration.value
+    globalConfiguration.value = config.Configuration['Function'] || config.Configuration['Value'] || globalConfiguration.value
   }
 }
 

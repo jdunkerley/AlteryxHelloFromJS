@@ -26,8 +26,32 @@
             <alteryx-pluginwidget type="TextBox" id="fieldName" dataName="ColumnName"></alteryx-pluginwidget>
             <label for="fieldName" style="color:red" id="fieldNameValid"></label>
 
-            <label for="fieldValue">Value</label>
+            <label for="fieldName">Mode</label>
+            <alteryx-pluginwidget type="DropDown" id="mode" dataName="Mode"></alteryx-pluginwidget>
+        </fieldset>
+        <fieldset id="expression" style="display:none">
+            <legend class='blueTitle'>Expression (variables in [])</legend>
+
+            <label for="expressionValue">Value</label>
+            <alteryx-pluginwidget type="TextBox" id="expressionValue" dataName="Expression"></alteryx-pluginwidget>
+        </fieldset>
+        <fieldset id="function" style="display:none">
+            <legend class='blueTitle'>JavaScript Function (row: object, index: integer)</legend>
+
+            <label for="functionValue">Function</label>
+            <alteryx-pluginwidget type="TextBox" id="functionValue" dataName="Function"></alteryx-pluginwidget>
+        </fieldset>
+        <fieldset id="constant" style="display:none">
+            <legend class='blueTitle'>Constant Value</legend>
+
+            <label for="fieldValue">Expression</label>
             <alteryx-pluginwidget type="TextBox" id="fieldValue" dataName="Value"></alteryx-pluginwidget>
+        </fieldset>
+        <fieldset id="columns" style="display:none">
+            <legend class='blueTitle'>Incoming Connection</legend>
+
+            <label for="functionValues">Fields</label>
+            <div id="functionValues"><div>
         </fieldset>
     <form>
 </body>
