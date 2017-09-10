@@ -1,4 +1,7 @@
 /// <reference path="../AlteryxDesigner.d.ts" />
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Test } from './TestBox'
 
 const fields: Alteryx.FieldInfo[] = []
 const preview: any = {}
@@ -20,13 +23,17 @@ function previewCallback(d: any): void {
       fieldsElement.style.color = 'red'
       fieldsElement.innerHTML = d.errorMsg
     } else {
-      fieldsElement.innerHTML = '<table>' + fields.map(f => `<tr><td><abbr title="${f.strType} : ${f.strSource}">${f.strName}</abbr></td><td>${preview[f.strName]}</td></tr>`).join('\r\n') + '</table>'
+      fieldsElement.innerHTML = fieldsElement.innerHTML + fields.map(f => `<tr><td><abbr title="${f.strSource}">${f.strName}</abbr></td><td>${fieldInfoToType(f)}</td><td>${preview[f.strName]}</td></tr>`).join('\r\n')
     }
 
     if (fieldsElement.parentElement) {
       fieldsElement.parentElement.style.display = 'block'
     }
   }
+}
+
+function fieldInfoToType(fieldInfo: Alteryx.FieldInfo) {
+  return fieldInfo.strType + (['String', 'WString', 'V_String', 'V_WString', 'FixedDecimal'].indexOf(fieldInfo.strType) !== -1 ? ` (${fieldInfo.nSize + (fieldInfo.strType === 'FixedDecimal' ? `, ${fieldInfo.nScale}` : '')})` : '')
 }
 
 Alteryx.Gui.BeforeLoad = (manager, dataItems) => {
@@ -71,12 +78,20 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   Alteryx.JsEvent(JSON.stringify({
     Event: 'GetInputData',
-    callback: 'previewCallback',
+    callback: previewCallback.name,
     anchorIndex: 0,
     connectionName: '',
     numRecs: 1,
     offset: 0
   }))
+
+  const element: Element|null = document.getElementById('target')
+  if (element) {
+    console.log(element.innerHTML)
+    ReactDOM.render(
+      React.createElement(Test, {}, null),
+      element)
+  }
 }
 
 Alteryx.Gui.Annotation = (manager) => {

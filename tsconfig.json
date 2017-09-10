@@ -1,8 +1,8 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
-        "target": "es5",
-        "moduleResolution": "classic",
+        "target": "es2016",
+        "moduleResolution": "node",
         "pretty": true,
         "newLine": "LF",
         "allowSyntheticDefaultImports": true,
@@ -15,7 +15,8 @@
         "jsx": "react"
     },
     "include": [
-        "./**/*"
+        "./**/*.ts",
+        "./**/*.tsx"
     ],
     "exclude": [
         "node_modules"

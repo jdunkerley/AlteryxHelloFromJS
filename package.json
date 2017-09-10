@@ -2,17 +2,26 @@
   "name": "hello-from-js",
   "version": "1.0.0.0",
   "description": "\"Demonstration of a TypeScript Custom Tool for Alteryx\"",
-  "main": "HelloFromJSGui.html",
   "author": "James Dunkerley",
   "license": "MIT",
   "devDependencies": {
+    "@types/fixed-data-table": "^0.6.32",
+    "@types/react": "^16.0.5",
+    "@types/react-dom": "^15.5.4",
     "tslint": "^5.4.3",
     "tslint-config-standard": "^6.0.1",
-    "typescript": "^2.4.1"
+    "typescript": "^2.4.1",
+    "webpack": "^3.5.6"
   },
   "repository": "https://github.com/jdunkerley/AlteryxHelloFromJS.git",
   "scripts": {
     "prebuild": "tslint -c tslint.json --project .",
-    "build": "tsc --sourceMap --listFiles --listEmittedFiles --strict --pretty -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "postbuild": "webpack"
+  },
+  "dependencies": {
+    "fixed-data-table": "^0.6.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   }
 }

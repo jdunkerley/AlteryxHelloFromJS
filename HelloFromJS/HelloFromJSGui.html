@@ -9,7 +9,7 @@
         document.write(`<link rel="stylesheet" type="text/css" href="${window.Alteryx.LibDir}1/lib/build/designerDesktop.css">`)
         document.write(`<script src="${window.Alteryx.LibDir}1/lib/build/designerDesktop.bundle.js">\x3c/script>`)
     </script>
-    <script src="HelloFromJSGui.js"></script>
+    <script src="HelloFromJSGui.bundle.js"></script>
     <style>
 .alteryx-toggle-switch-outer {
   position: absolute;
@@ -47,11 +47,10 @@
             <label for="fieldValue">Expression</label>
             <alteryx-pluginwidget type="TextBox" id="fieldValue" dataName="Value"></alteryx-pluginwidget>
         </fieldset>
-        <fieldset id="columns" style="display:none">
-            <legend class='blueTitle'>Incoming Connection</legend>
+        <fieldset id="columns" style="display:block">
+            <legend class='blueTitle'>Incoming Fields</legend>
 
-            <label for="functionValues">Fields</label>
-            <div id="functionValues"><div>
+            <div id="target">Some Text</div>
         </fieldset>
     <form>
 </body>
